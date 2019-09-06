@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-enum square{hidden_ship, hidden_water, shown_ship, shown_water};
+enum square{shown_ship, shown_water, hidden_ship, hidden_water};
 
 
 void printBoard(int **board, int boardSize){
@@ -56,13 +56,13 @@ int main(int argc, char **argv){
     if(board[x][y] == hidden_ship) continue;
     board[x][y] = hidden_ship;
     i = i + 1;
-  }  
-  
+  }
+
   int shipsFound = 0;
   int roundNum = 0;
 
   while(shipsFound < boardSize){
-    
+
     printBoard(board, boardSize);
 
     int playerX, playerY;
@@ -82,10 +82,9 @@ int main(int argc, char **argv){
         break;
       default:
         printf("You already chose that square!\n");
-    } 
+    }
     roundNum += 1;
   }
   printf("Congrats! You won in %d rounds\n", roundNum);
   return 0;
 }
-
