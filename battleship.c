@@ -50,6 +50,7 @@ int main(int argc, char **argv){
   srand(time(0));
 
   int x,y;
+  //For an NxN board, pick N battleships.
   while(i < boardSize){
     x = rand() % boardSize;
     y = rand() % boardSize;
@@ -66,7 +67,7 @@ int main(int argc, char **argv){
     printBoard(board, boardSize);
 
     int playerX, playerY;
-    printf("Enter X and Y values: ");
+    printf("Enter X and Y values (e.g., \"1 2\"): ");
     scanf("%d %d", &playerX, &playerY);
     printf("\n");
 
